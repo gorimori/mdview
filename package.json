@@ -1,0 +1,30 @@
+{
+  "name": "mdview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gorimori/mdview.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gorimori/mdview/issues"
+  },
+  "homepage": "https://github.com/gorimori/mdview#readme",
+  "dependencies": {
+    "preact": "^10.2.1"
+  },
+  "devDependencies": {
+    "@types/webpack": "^4.41.3",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
