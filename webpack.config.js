@@ -14,7 +14,7 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      name: path.join('public', 'common', 'js', 'shared', 'main'),
+      name: path.join('shared', 'main'),
       chunks: 'all'
     }
   },
