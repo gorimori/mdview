@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+.c-col-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 0 2rem;
+}
+
+.p-input-area {
+  width: 100%;
+}
+
+.p-output-area {
+  border: 1px solid gray;
+  padding: 8px 16px;
+}
+
+.p-col-push {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.p-col-push__el {
+  flex: 0 0 auto;
+}
+
+.p-col-push__el.-push {
+  flex: 1 1 auto;
+}
+
+.u-full-height {
+  height: 100%;
+}
