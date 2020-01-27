@@ -1,13 +1,12 @@
 import { h, render, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
+// @ts-ignore
+import marked from 'marked';
 
 const App = () => {
   const [inputValue, setInputValue] = useState('');
   const updateInputValue: h.JSX.GenericEventHandler<HTMLTextAreaElement> = useCallback(
-    e => {
-      setInputValue(e.currentTarget.value);
-      console.log(inputValue);
-    },
+    e => setInputValue(e.currentTarget.value),
     [inputValue]
   );
 
@@ -30,7 +29,12 @@ const App = () => {
         <div class="c-col-2__col">
           <h2 class="c-heading -lv2">Output</h2>
 
-          <div class="p-output-area">{inputValue}</div>
+          <div class="p-output-area">
+            <div
+              class="content"
+              dangerouslySetInnerHTML={{ __html: marked(inputValue) }}
+            ></div>
+          </div>
         </div>
       </div>
     </Fragment>
