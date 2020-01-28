@@ -1,4 +1,4 @@
-import { h, render, Fragment} from 'preact';
+import { h, render, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
 // @ts-ignore
 import marked from 'marked';
