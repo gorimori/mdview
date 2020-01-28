@@ -1,9 +1,9 @@
-import { h, render, Fragment } from 'preact';
+import { h, render, Fragment} from 'preact';
 import { useState, useCallback } from 'preact/hooks';
 // @ts-ignore
 import marked from 'marked';
 
-const App = () => {
+const App = (): h.JSX.Element => {
   const [inputValue, setInputValue] = useState('');
   const updateInputValue: h.JSX.GenericEventHandler<HTMLTextAreaElement> = useCallback(
     e => setInputValue(e.currentTarget.value),
