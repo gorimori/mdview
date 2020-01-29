@@ -1,12 +1,17 @@
 import { h, render, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
-// @ts-ignore
-import marked from 'marked';
+
+import { md2html } from '../lib/markdown.worker';
 
 const App = (): h.JSX.Element => {
   const [inputValue, setInputValue] = useState('');
+  const [converted, setConverted] = useState('');
+
   const updateInputValue: h.JSX.GenericEventHandler<HTMLTextAreaElement> = useCallback(
-    e => setInputValue(e.currentTarget.value),
+    e => {
+      setInputValue(e.currentTarget.value);
+      md2html(e.currentTarget.value).then(current => setConverted(current));
+    },
     [inputValue]
   );
 
@@ -36,7 +41,7 @@ const App = (): h.JSX.Element => {
               <div class="p-output-area u-full-height">
                 <div
                   class="content"
-                  dangerouslySetInnerHTML={{ __html: marked(inputValue) }}
+                  dangerouslySetInnerHTML={{ __html: converted }}
                 ></div>
               </div>
             </div>

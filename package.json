@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/gorimori/mdview#readme",
   "dependencies": {
+    "comlink": "^4.2.0",
     "marked": "^0.8.0",
     "preact": "^10.2.1"
   },
@@ -28,6 +29,7 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "prettier": "^1.19.1",
+    "comlink-loader": "^2.0.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
