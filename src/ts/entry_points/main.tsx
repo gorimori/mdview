@@ -1,22 +1,23 @@
-import { h, render, Fragment } from 'preact';
+import { h, render } from 'preact';
 import { useState, useCallback } from 'preact/hooks';
 
 import { md2html } from '../lib/markdown.worker';
 
 const App = (): h.JSX.Element => {
-  const [inputValue, setInputValue] = useState('');
+  const [input, setInput] = useState('');
   const [converted, setConverted] = useState('');
 
   const updateInputValue: h.JSX.GenericEventHandler<HTMLTextAreaElement> = useCallback(
     e => {
-      setInputValue(e.currentTarget.value);
-      md2html(e.currentTarget.value).then(current => setConverted(current));
+      const { value: v } = e.currentTarget;
+      setInput(v);
+      md2html(v).then(setConverted);
     },
-    [inputValue]
+    [input]
   );
 
   return (
-    <Fragment>
+    <div class="app">
       <div class="c-col-2">
         <div class="c-col-2__col">
           <h2 class="c-heading -lv2">Input</h2>
@@ -26,7 +27,7 @@ const App = (): h.JSX.Element => {
             cols={30}
             rows={10}
             class="p-input-area"
-            value={inputValue}
+            value={input}
             onInput={updateInputValue}
           ></textarea>
         </div>
@@ -48,7 +49,7 @@ const App = (): h.JSX.Element => {
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
