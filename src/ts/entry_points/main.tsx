@@ -13,7 +13,7 @@ const App = (): h.JSX.Element => {
       setInput(v);
       md2html(v).then(setConverted);
     },
-    [input]
+    []
   );
 
   return (
