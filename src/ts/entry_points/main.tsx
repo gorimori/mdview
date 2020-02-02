@@ -47,9 +47,19 @@ const App = (): h.JSX.Element => {
             </div>
           </div>
         </div>
+
+        <a href="/te.html">te.html (by sw)</a>
       </div>
     </Fragment>
   );
 };
 
 render(<App />, document.body);
+
+window.addEventListener('load', async () => {
+  try {
+    await navigator.serviceWorker.register('/sw.js');
+  } catch (e) {
+    console.log('register failed', e);
+  }
+});

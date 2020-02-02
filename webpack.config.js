@@ -7,6 +7,7 @@ module.exports = {
   mode: 'development',
   entry: {
     main: path.resolve('src', 'ts', 'entry_points', 'main.tsx'),
+    '../../sw': path.resolve('src', 'ts', 'entry_points', 'sw.ts'),
   },
   output: {
     path: path.resolve('public', 'common', 'js'),
