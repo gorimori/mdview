@@ -17,7 +17,7 @@ const App = (): h.JSX.Element => {
   );
 
   return (
-    <div class="app">
+    <form action="/post/" method="POST" class="app" encType="text/plain">
       <div class="c-col-2">
         <div class="c-col-2__col">
           <h2 class="c-heading -lv2">Input</h2>
@@ -30,6 +30,7 @@ const App = (): h.JSX.Element => {
             value={input}
             onInput={updateInputValue}
           ></textarea>
+          <input type="hidden" name="html" value={converted} />
         </div>
 
         <div class="c-col-2__col">
@@ -49,9 +50,9 @@ const App = (): h.JSX.Element => {
           </div>
         </div>
 
-        <a href="/te.html">te.html (by sw)</a>
+        <button type="submit">POST</button>
       </div>
-    </div>
+    </form>
   );
 };
 

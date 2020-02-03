@@ -14,8 +14,13 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
+  const isSameOrigin = url.origin == location.origin;
+  const toPostEndpoint = url.pathname === '/post/';
+  const isPost = event.request.method === 'POST';
+
   // TODO: respond with generated HTML
-  if (url.origin == location.origin && url.pathname == '/te.html') {
+  if (isSameOrigin && toPostEndpoint && isPost) {
+    console.log('POST to /post/!');
     event.respondWith(fetch('/'));
   }
 });
