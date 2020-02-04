@@ -17,7 +17,14 @@ const App = (): h.JSX.Element => {
   );
 
   return (
-    <form action="/post/" method="POST" class="app" encType="text/plain">
+    <form
+      action="/post/"
+      method="POST"
+      class="app"
+      onSubmit={(): void => {
+        setConverted(encodeURI(converted));
+      }}
+    >
       <div class="c-col-2">
         <div class="c-col-2__col">
           <h2 class="c-heading -lv2">Input</h2>
