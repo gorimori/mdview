@@ -7,8 +7,8 @@
     "node": ">=13"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "do": "node te.js"
+    "lint": "eslint --fix ./src/ts/**/*.ts*",
+    "fmt": "prettier --write ./src/**/*.{css,tsx,ts,html}"
   },
   "repository": {
     "type": "git",
