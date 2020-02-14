@@ -3,6 +3,7 @@ import { useState, useCallback } from 'preact/hooks';
 
 import { md2html } from '../lib/markdown.worker';
 
+// eslint-disable-next-line
 const App = (): h.JSX.Element => {
   const [input, setInput] = useState('');
   const [converted, setConverted] = useState('');
@@ -42,11 +43,15 @@ const App = (): h.JSX.Element => {
 
         <div class="c-col-2__col">
           <div class="p-col-push">
-            <div class="p-col-push__el">
+            <div class="p-col-push__row">
               <h2 class="c-heading -lv2">Output</h2>
             </div>
 
-            <div class="p-col-push__el -push">
+            <div class="p-col-push__row">
+              <button type="submit">POST</button>
+            </div>
+
+            <div class="p-col-push__row -push">
               <div class="p-output-area u-full-height">
                 <div
                   class="content"
@@ -56,8 +61,6 @@ const App = (): h.JSX.Element => {
             </div>
           </div>
         </div>
-
-        <button type="submit">POST</button>
       </div>
     </form>
   );

@@ -3,11 +3,11 @@
 import {} from '.';
 declare const self: ServiceWorkerGlobalScope;
 
-self.addEventListener('install', event => {
+self.addEventListener('install', () => {
   console.log('sw installing...');
 });
 
-self.addEventListener('activate', event => {
+self.addEventListener('activate', () => {
   console.log('sw now ready to handle fetches!');
 });
 
