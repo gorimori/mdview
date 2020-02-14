@@ -8,7 +8,8 @@
   },
   "scripts": {
     "lint": "eslint --fix ./src/ts/**/*.ts*",
-    "fmt": "prettier --write ./src/**/*.{css,tsx,ts,html}"
+    "fmt": "prettier --write ./src/**/*.{css,tsx,ts,html}",
+    "build": "cp -r ./src/pages/* ./public/; webpack; cp ./src/css/* ./public/common/css"
   },
   "repository": {
     "type": "git",
